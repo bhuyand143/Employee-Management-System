@@ -7,6 +7,8 @@ import os
 load_dotenv()
 database_pwd = os.getenv('DATABASE_PWD')
 database_user=os.getenv('DATABASE_USER')
+admin_username=os.getenv('ADMIN_USERNAME')
+admin_password=os.getenv('ADMIN_PASSWORD')
 
 def create_connection():
     try:
@@ -188,7 +190,7 @@ def main():
             admin_username = input("Enter admin username: ")
             admin_password = input("Enter admin password: ")
             # Assuming admin credentials validation
-            if admin_username == 'admin' and admin_password == 'adminpass':
+            if admin_username ==admin_username  and admin_password ==admin_password :
                 admin_operations(cursor)
             else:
                 print("Invalid admin credentials.")
